@@ -1,0 +1,25 @@
+<?php
+/**
+ * função autoload para incluir classes de vários diretórios sem precisar incluir manualmente
+ */
+ function __autoload($classes) {
+ 	
+    /* diretório principal das classes */
+ 	
+ 	/**
+ 	extenção dos meus arquivos
+ 	 */
+ 	$extencao 	  = ".class";
+ 	$exetencaoFim = ".php";
+ 	
+ 	//subdiretórios
+    $diretorios = array('../../abstractdao/','../../abstractpo/','../../exceptions/','../controller/','../dao/','../model/');
+    
+    foreach ($diretorios as $valor) {
+        if (file_exists($valor . $classes .$extencao.$exetencaoFim)) {
+            require_once $valor . $classes .$extencao.$exetencaoFim;
+        }
+        
+    }
+}
+?>

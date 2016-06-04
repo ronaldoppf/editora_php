@@ -1,0 +1,127 @@
+<?php
+/**
+ * Classe responsável por conter as regras de negócios do nosso sistema. Esta
+ * classe representa a camada Model(M) do MVC. Será nesta Classe que iremos
+ * pegar os dados dos campos da tela( V ) e preencher o nosso PO(M) enviando-o á
+ * camada DAO para consultas e persistencias. Neste nosso sistema, todos os
+ * tratamentos de exceção estarão centralizados aqui, juntamente com as
+ * possíveis validações de campos e regras.
+ */
+class FuncionarioService {
+	/**
+	 * Atributo responsável por possibilitar o acesso da Camada Model a Camada
+	 */
+	private $dao;
+	public function __construct($codfun) {
+		$this->dao = new FuncionarioDAO ();
+	}
+	
+	/**
+	 * Método responsável por trabalhar os dados antes de mandar para a Camada de persitência(DAO).
+	 */
+	public function inserir(FuncionarioPO $po) {
+		/**
+		 * Criando um Bloco de Transação
+		 */
+		try {
+			/* Abre a conexão */
+			$this->dao->abrirConexao ( AbstractDAO::$PERSISTENCIA );
+			$this->dao->inserir( $po );
+			$this->dao->fecharConexao ();
+		} catch ( ConexaoException $e ) {
+			throw new ApplicationException ( $e->getMessage (), $e );
+		} catch ( InserirException $e ) {
+			
+			throw new ApplicationException ( $e->getMessage (), $e );
+		} catch ( Exception $e ) {
+			
+			throw new ApplicationException ( "Erro desconhecido", $e );
+		}
+	} // fim do inserir
+	
+	/**
+	 * Método responsável por trabalhar os dados antes de mandar para a Camada
+	 * de persitência(DAO).
+	 */
+	public function alterar(FuncionarioPO $po) {
+		/**
+		 * Criando um Bloco de Transação
+		 */
+		try {
+			/* Abre a conexão */
+			$this->dao->abrirConexao ( AbstractDAO::$PERSISTENCIA );
+			$this->dao->alterar ( $po );
+			$this->dao->fecharConexao ();
+		} catch ( ConexaoException $e ) {
+			throw new ApplicationException ( $e->getMessage (), $e );
+		} catch ( AlterarException $e ) {
+			
+			throw new ApplicationException ( $e->getMessage (), $e );
+		} catch ( Exception $e ) {
+			
+			throw new ApplicationException ( "Erro desconhecido", $e );
+		}
+	} // fim do inserir
+	
+	/**
+	 * Método responsável por buscar todos registros
+	 */
+	public function buscarTodos() {
+		/**
+		 * Criando um Bloco de Transação
+		 */
+		try {
+			/* Abre a conexão */
+			$this->dao->abrirConexao ( AbstractDAO::$CONSULTA );
+			$this->dao->fecharConexao ();
+			return $this->dao->buscarTodos ();
+		} catch ( ConexaoException $e ) {
+			throw new ApplicationException ( $e->getMessage (), $e );
+		} catch ( FiltrarException $e ) {
+			throw new ApplicationException ( $e->getMessage (), $e );
+		}
+	}
+	/**
+	 * Método responsável por buscar registro por id(codigo)
+	 */
+	public function buscarCodigo(FuncionarioPO $po) {
+		/**
+		 * Criando um Bloco de Transação
+		 */
+		try {
+			/* Abre a conexão */
+			$this->dao->abrirConexao ( AbstractDAO::$CONSULTA );
+			$this->dao->fecharConexao ();
+			return $this->dao->buscarPorCodigo ( $po );
+		} catch ( ConexaoException $e ) {
+			throw new ApplicationException ( $e->getMessage (), $e );
+		} catch ( FiltrarException $e ) {
+			throw new ApplicationException ( $e->getMessage (), $e );
+		} catch ( Exception $e ) {
+			throw new ApplicationException ( "Erro desconhecido", $e );
+		}
+	}
+	
+	/**
+	 * Método responsável por excluir registros da base de dados
+	 */
+	public function excluir(FuncionarioPO $po) {
+		/**
+		 * Criando um Bloco de Transação
+		 */
+		try {
+			/* Abre a conexão */
+			$this->dao->abrirConexao ( AbstractDAO::$PERSISTENCIA );
+			$this->dao->excluir ( $po );
+			$this->dao->fecharConexao ();
+		} catch ( ConexaoException $e ) {
+			throw new ApplicationException ( $e->getMessage (), $e );
+		} catch ( ExcluirException $e ) {
+			throw new ApplicationException ( $e->getMessage (), $e );
+		} catch ( Exception $e ) {
+			
+			throw new ApplicationException ( "Erro desconhecido", $e );
+		}
+	}
+}
+?>
