@@ -1,5 +1,12 @@
 <?php
 /**
+ *Desenvolvido por Ronaldo Pontes Pessoa Filho
+ *ronaldoppf@hotmail.com
+ *https://www.facebook.com/ronaldoppf
+ *https://github.com/ronaldoppf
+ **/
+
+/**
  *Classe que representa o po do sistema
  */
 final class LivrariaPO extends LivrariaAbstractPO {

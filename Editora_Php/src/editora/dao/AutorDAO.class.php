@@ -1,5 +1,12 @@
 <?php
 /**
+ *Desenvolvido por Ronaldo Pontes Pessoa Filho
+ *ronaldoppf@hotmail.com
+ *https://www.facebook.com/ronaldoppf
+ *https://github.com/ronaldoppf
+ **/
+
+/**
  * Classe que representa a camada de persistência de nosso Equipamento.
  * Esta classe recebe os dados da camada de Negocio (MODEL) e com eles monta as
  * SQLs e as QUERYs necessrias para o funcionamento correto do processo solicitado.

@@ -41,6 +41,13 @@
 </html>
 
 <?php
+/**
+ *Desenvolvido por Ronaldo Pontes Pessoa Filho
+ *ronaldoppf@hotmail.com
+ *https://www.facebook.com/ronaldoppf
+ *https://github.com/ronaldoppf
+ **/
+
 require '../../utilidades/autoLoad.php';
 if(isset($_POST['entrar'])) {
 	

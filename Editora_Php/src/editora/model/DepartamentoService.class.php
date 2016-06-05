@@ -1,5 +1,12 @@
 <?php
 /**
+ *Desenvolvido por Ronaldo Pontes Pessoa Filho
+ *ronaldoppf@hotmail.com
+ *https://www.facebook.com/ronaldoppf
+ *https://github.com/ronaldoppf
+ **/
+
+/**
  * Classe responsável por conter as regras de negócios do nosso sistema. Esta
  * classe representa a camada Model(M) do MVC. Será nesta Classe que iremos
  * pegar os dados dos campos da tela( V ) e preencher o nosso PO(M) enviando-o á

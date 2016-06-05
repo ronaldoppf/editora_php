@@ -1,5 +1,12 @@
 <?php
 /**
+ *Desenvolvido por Ronaldo Pontes Pessoa Filho
+ *ronaldoppf@hotmail.com
+ *https://www.facebook.com/ronaldoppf
+ *https://github.com/ronaldoppf
+ **/
+
+/**
  * Interface responsável por representar os métodos de um CRUD.
  * Interface usada para exemplificar na pratica o uso de Interfaces.
  */

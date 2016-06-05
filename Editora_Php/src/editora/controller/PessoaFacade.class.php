@@ -1,5 +1,12 @@
 <?php
 /**
+ *Desenvolvido por Ronaldo Pontes Pessoa Filho
+ *ronaldoppf@hotmail.com
+ *https://www.facebook.com/ronaldoppf
+ *https://github.com/ronaldoppf
+ **/
+
+/**
  * Classe que representa a interligação do Sistema com a camada de Front-end.
  *
  * Aqui entende-se como camada de Front-end toda classe e/ou arquivos criados

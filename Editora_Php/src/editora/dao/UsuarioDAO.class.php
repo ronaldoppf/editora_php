@@ -1,4 +1,11 @@
 <?php
+/**
+ *Desenvolvido por Ronaldo Pontes Pessoa Filho
+ *ronaldoppf@hotmail.com
+ *https://www.facebook.com/ronaldoppf
+ *https://github.com/ronaldoppf
+ **/
+
 
 /**
  * Classe que representa a camada de persistência de nosso Equipamento.
